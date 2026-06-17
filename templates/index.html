@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Service Booking Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; background-color: #f4f4f4; }
+        .form-container { max-width: 500px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0px 0px 10px #ccc; margin: auto; }
+        input, select, textarea { width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background: #28a745; color: white; border: none; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Car Service Booking</h2>
+    <form action="/" method="POST">
+        <label>Car Name:</label>
+        <input type="text" name="car_name" required>
+
+        <label>Variant:</label>
+        <input type="text" name="variant">
+
+        <label>Car Registration Number:</label>
+        <input type="text" name="car_number" required>
+
+        <label>Owner's Name:</label>
+        <input type="text" name="owner_name" required>
+
+        <label>Address:</label>
+        <textarea name="address" rows="3"></textarea>
+
+        <label>Phone Number:</label>
+        <input type="tel" name="phone" required>
+
+        <label>Email Address:</label>
+        <input type="email" name="email">
+
+        <label>Service Date:</label>
+        <input type="date" name="booking_date" required>
+
+        <label>Service Time:</label>
+        <input type="time" name="booking_time" required>
+
+        <label>Expected Delivery Date:</label>
+        <input type="date" name="expected_delivery" required>
+
+        <label>Type of Service:</label>
+        <select name="service_type">
+            <option value="General Service">General Service</option>
+            <option value="Oil Change">Oil Change</option>
+            <option value="Water Wash">Water Wash</option>
+            <option value="Body Repair">Body Repair</option>
+        </select>
+
+        <button type="submit">Book Service</button>
+    </form>
+</div>
+
+</body>
+</html>
