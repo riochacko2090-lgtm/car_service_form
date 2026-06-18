@@ -2,60 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Service Booking Form</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 30px; background-color: #f4f4f4; }
-        .form-container { max-width: 500px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0px 0px 10px #ccc; margin: auto; }
-        input, select, textarea { width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box; }
-        button { width: 100%; padding: 10px; background: #28a745; color: white; border: none; font-size: 16px; cursor: pointer; }
-    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex items-center justify-center p-4 sm:p-8">
 
-<div class="form-container">
-    <h2>Car Service Booking</h2>
-    <form action="/" method="POST">
-        <label>Car Name:</label>
-        <input type="text" name="car_name" required>
+    <div class="w-full max-w-2xl bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden">
+        <div class="bg-linear-to-r from-blue-600 to-indigo-700 p-6 sm:p-8 text-white text-center">
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight">Car Service Booking</h1>
+            <p class="text-blue-100 text-sm mt-1">Schedule your next vehicle maintenance effortlessly</p>
+        </div>
 
-        <label>Variant:</label>
-        <input type="text" name="variant">
+        <form action="/" method="POST" class="p-6 sm:p-8 space-y-6">
+            
+            <div>
+                <h2 class="text-lg font-semibold text-slate-900 border-b border-slate-100 pb-2 mb-4">Vehicle Information</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-medium text-slate-500 uppercase tracking-wider mb-1">Car Name</label>
+                        <input type="text" name="car_name" required placeholder="e.g. Maruti Swift" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-500 uppercase tracking-wider mb-1">Variant</label>
+                        <input type="text" name="variant" placeholder="e.g. VXI" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label class="block text-xs font-medium text-slate-500 uppercase tracking-wider mb-1">Car Registration Number</label>
+                        <input type="text" name="car_number" required placeholder="e.g. KL-07-CD-1234" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all uppercase">
+                    </div>
+                </div>
+            </div>
 
-        <label>Car Registration Number:</label>
-        <input type="text" name="car_number" required>
+            <div>
+                <h2 class="text-lg font-semibold text-slate-900 border-b border-slate-100 pb-2 mb-4">Customer Details</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="sm:col-span-2">
+                        <label class="block text-xs font-medium text-slate-500 uppercase tracking-wider mb-1">Owner's Full Name</label>
+                        <input type="text" name="owner_name" required placeholder="John Doe" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-500 uppercase tracking-wider mb-1">Phone Number</label>
+                        <input type="tel" name="phone" required placeholder="9876543210" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-500 uppercase tracking-wider mb-1">Email Address</label>
+                        <input type="email" name="email" placeholder="john@example.com" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label class="block text-xs font-medium text-slate-500 uppercase tracking-wider mb-1">Residential Address</label>
+                        <textarea name="address" rows="2" placeholder="Enter full address details..." class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all resize-none"></textarea>
+                    </div>
+                </div>
+            </div>
 
-        <label>Owner's Name:</label>
-        <input type="text" name="owner_name" required>
+            <div>
+                <h2 class="text-lg font-semibold text-slate-900 border-b border-slate-100 pb-2 mb-4">Service Schedule</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-medium text-slate-500 uppercase tracking-wider mb-1">Preferred Drop Date</label>
+                        <input type="date" name="booking_date" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-500 uppercase tracking-wider mb-1">Preferred Time Slot</label>
+                        <input type="time" name="booking_time" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-500 uppercase tracking-wider mb-1">Expected Return Date</label>
+                        <input type="date" name="expected_delivery" required class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-500 uppercase tracking-wider mb-1">Service Packages</label>
+                        <select name="service_type" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all appearance-none cursor-pointer">
+                            <option value="General Service">Periodic General Service</option>
+                            <option value="Oil Change">Express Oil & Filter Change</option>
+                            <option value="Water Wash">Full Body Deep Clean Wash</option>
+                            <option value="Body Repair">Denting & Body Painting</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
 
-        <label>Address:</label>
-        <textarea name="address" rows="3"></textarea>
-
-        <label>Phone Number:</label>
-        <input type="tel" name="phone" required>
-
-        <label>Email Address:</label>
-        <input type="email" name="email">
-
-        <label>Service Date:</label>
-        <input type="date" name="booking_date" required>
-
-        <label>Service Time:</label>
-        <input type="time" name="booking_time" required>
-
-        <label>Expected Delivery Date:</label>
-        <input type="date" name="expected_delivery" required>
-
-        <label>Type of Service:</label>
-        <select name="service_type">
-            <option value="General Service">General Service</option>
-            <option value="Oil Change">Oil Change</option>
-            <option value="Water Wash">Water Wash</option>
-            <option value="Body Repair">Body Repair</option>
-        </select>
-
-        <button type="submit">Book Service</button>
-    </form>
-</div>
+            <div class="pt-2">
+                <button type="submit" class="w-full py-3 px-4 bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-xl shadow-md shadow-blue-500/20 active:scale-98 transition-all cursor-pointer text-center">
+                    Confirm Service Booking
+                </button>
+            </div>
+        </form>
+    </div>
 
 </body>
 </html>
